@@ -1,0 +1,21 @@
+{
+  "name": "Project-Kind-Way",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/anugrah-danang-abiyoga/Project-Kind-Way.git",
+  "author": "ben-tai <jamin.tairea@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "knex": "^0.14.4",
+    "sqlite3": "^4.0.0"
+  },
+
+  "scripts": {
+    "knex": "knex",
+    "test": "jest"
+  }, 
+  
+  "devDependencies": {
+    "jest": "^22.4.3"
+  }
+}
