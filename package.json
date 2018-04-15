@@ -10,6 +10,7 @@
     "express-handlebars": "^3.0.0",
     "knex": "^0.14.4",
     "nodemon": "^1.17.3",
+    "react-loading-components": "^1.1.12",
     "react-router-dom": "^4.2.2",
     "sqlite3": "^4.0.0",
     "supertest": "^3.0.0"
