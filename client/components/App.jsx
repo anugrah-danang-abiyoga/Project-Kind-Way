@@ -6,7 +6,7 @@ import Loader from './Loader'
 const App = props => {
     return <Router>
         <div>
-            <Loader />
+        <Loader />
         <h1>Hello, Have you done any good deeds today?</h1>
         </div>
     </Router>

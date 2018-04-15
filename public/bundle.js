@@ -26063,7 +26063,7 @@ var _reactLoadingComponents2 = _interopRequireDefault(_reactLoadingComponents);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Loader = function Loader() {
-  return _react2.default.createElement(_reactLoadingComponents2.default, { type: 'ball_triangle', width: 100, height: 100, fill: '#f44242' });
+  return _react2.default.createElement(_reactLoadingComponents2.default, { type: 'rings', width: 100, height: 100, fill: '#f44242' });
 };
 
 exports.default = Loader;
