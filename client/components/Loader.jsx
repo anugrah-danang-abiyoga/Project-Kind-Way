@@ -6,19 +6,23 @@ import Loading from 'react-loading-components';
 // );
 
 class Loader extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
-    this.state= {
-      loading: true,
-      transitionAppear: true,
-      transitionAppearTimeout: 0.5,
-    } 
-    // this.loading = this.loading.bind(this)
+    this.state={
+      timeOut: 0,
+      transitionAppear: ('./Ready')
+    }
+    this.timeOut = this.timeOut.bind(this)
+    this.transitionAppear = this.transitionAppear.bind(this)
   }
 
-  // componentWillAppear () {
-  //     this.loading(Loading)
-  // }
+  componentDidLoad() {
+      this.timeOut
+  }
+
+  componentWillAppear() {
+      this.transitionAppear
+  }
 
   render() {
       return (

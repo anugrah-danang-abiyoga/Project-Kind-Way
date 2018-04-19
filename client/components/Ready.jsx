@@ -2,7 +2,7 @@ import React from 'react'
 
 const Ready = props => {
     return (
-        <p>ready</p>
+        <p>Hello, Have you done any good deeds today?</p>
     )
 }
 
