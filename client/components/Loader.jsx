@@ -9,6 +9,7 @@ class Loader extends React.Component {
   constructor(props) {
     super(props)
     this.state={
+    loading: true,
       timeOut: 0,
       transitionAppear: ('./Ready')
     }
