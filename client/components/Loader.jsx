@@ -5,36 +5,34 @@ import Loading from 'react-loading-components';
 //   <Loading type='rings' width={100} height={100} fill='#f44242' />
 // );
 
-class Loader extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state={
-    loading: true,
-      timeOut: 0,
-      transitionAppear: ('./Ready')
+export default class App extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state={
+        isLoading: true,
+        loaded: false
+        }
+        this.startLoading = this.startLoading.bind(this)
+      }
+
+      componentWillMount() {
+        setTimeout(() => this.setState({ isLoading: false }), 3000)
     }
-    this.timeOut = this.timeOut.bind(this)
-    this.transitionAppear = this.transitionAppear.bind(this)
-  }
 
-  componentDidLoad() {
-      this.timeOut
-  }
+      startLoading() {
+          this.setState({isLoading: this.state.isLoading})
+      }
 
-  componentWillAppear() {
-      this.transitionAppear
-  }
+    
+      render() {
+          return (
+              <div>
+                  {this.state.isLoading && <Loading type='rings' width={100} height={100} fill='#f44242' />}
 
-  render() {
-      return (
-          <div>
-            <Loading type='rings' width={100} height={100} fill='#f44242' />
-           <div className="header"><h1>Hooray! you are one step closer to become a better version of yourself</h1></div>          
-          </div>
-      )
-  }
-}
-export default Loader;
+              </div>
+          )
+      }
+    }
 
 
 
@@ -48,3 +46,29 @@ export default Loader;
 //     };
 //   }
 // }
+
+// export default class Loader extends React.Component {
+//     constructor(props) {
+//         super(props)
+//         this.state={
+//         loading: true
+//         }
+//       }
+    
+//       componentDidMount() {
+//           setTimeout(() => this.setState({ loading: false }), '/Ready')
+//           .then();
+//       }
+    
+//       render() {
+//           return (
+//               <div>
+//                   <Loading type='rings' width={100} height={100} fill='#f44242' />        
+//               </div>
+//           )
+//       }
+//     }
+    
+
+
+

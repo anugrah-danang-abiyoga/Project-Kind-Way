@@ -22873,12 +22873,24 @@ var App = function App(props) {
             'div',
             null,
             _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _Loader2.default }),
-            _react2.default.createElement(_reactRouterDom.Route, { path: '/ready', component: _Ready2.default })
+            _react2.default.createElement(_reactRouterDom.Route, { path: '/Ready', component: _Ready2.default })
         )
     );
 };
 
 exports.default = App;
+
+// export default class App extends React.Component {
+//     constructor(props) {
+//         super(props)
+//         this.state = {
+//             loading: true
+//         }
+//         this.startLoading = this.startLoading.bind(this)
+//     }
+//     startLoading() {
+//         this.setState({loading: this.state.loading})
+//     }
 
 /***/ }),
 /* 57 */
@@ -26074,32 +26086,35 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 //   <Loading type='rings' width={100} height={100} fill='#f44242' />
 // );
 
-var Loader = function (_React$Component) {
-    _inherits(Loader, _React$Component);
+var App = function (_React$Component) {
+    _inherits(App, _React$Component);
 
-    function Loader(props) {
-        _classCallCheck(this, Loader);
+    function App(props) {
+        _classCallCheck(this, App);
 
-        var _this = _possibleConstructorReturn(this, (Loader.__proto__ || Object.getPrototypeOf(Loader)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
 
         _this.state = {
-            timeOut: 0,
-            transitionAppear: './Ready'
+            isLoading: true,
+            loaded: false
         };
-        _this.timeOut = _this.timeOut.bind(_this);
-        _this.transitionAppear = _this.transitionAppear.bind(_this);
+        _this.startLoading = _this.startLoading.bind(_this);
         return _this;
     }
 
-    _createClass(Loader, [{
-        key: 'componentDidLoad',
-        value: function componentDidLoad() {
-            this.timeOut;
+    _createClass(App, [{
+        key: 'componentWillMount',
+        value: function componentWillMount() {
+            var _this2 = this;
+
+            setTimeout(function () {
+                return _this2.setState({ isLoading: false });
+            }, 3000);
         }
     }, {
-        key: 'componentWillAppear',
-        value: function componentWillAppear() {
-            this.transitionAppear;
+        key: 'startLoading',
+        value: function startLoading() {
+            this.setState({ isLoading: this.state.isLoading });
         }
     }, {
         key: 'render',
@@ -26107,24 +26122,13 @@ var Loader = function (_React$Component) {
             return _react2.default.createElement(
                 'div',
                 null,
-                _react2.default.createElement(_reactLoadingComponents2.default, { type: 'rings', width: 100, height: 100, fill: '#f44242' }),
-                _react2.default.createElement(
-                    'div',
-                    { className: 'header' },
-                    _react2.default.createElement(
-                        'h1',
-                        null,
-                        'Hooray! you are one step closer to become a better version of yourself'
-                    )
-                )
+                this.state.isLoading && _react2.default.createElement(_reactLoadingComponents2.default, { type: 'rings', width: 100, height: 100, fill: '#f44242' })
             );
         }
     }]);
 
-    return Loader;
+    return App;
 }(_react2.default.Component);
-
-exports.default = Loader;
 
 // class Loader extends Component {
 //   constructor(props) {
@@ -26135,6 +26139,31 @@ exports.default = Loader;
 //     };
 //   }
 // }
+
+// export default class Loader extends React.Component {
+//     constructor(props) {
+//         super(props)
+//         this.state={
+//         loading: true
+//         }
+//       }
+
+//       componentDidMount() {
+//           setTimeout(() => this.setState({ loading: false }), '/Ready')
+//           .then();
+//       }
+
+//       render() {
+//           return (
+//               <div>
+//                   <Loading type='rings' width={100} height={100} fill='#f44242' />        
+//               </div>
+//           )
+//       }
+//     }
+
+
+exports.default = App;
 
 /***/ }),
 /* 86 */
