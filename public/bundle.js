@@ -26074,6 +26074,10 @@ var _reactLoadingComponents = __webpack_require__(86);
 
 var _reactLoadingComponents2 = _interopRequireDefault(_reactLoadingComponents);
 
+var _Ready = __webpack_require__(103);
+
+var _Ready2 = _interopRequireDefault(_Ready);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -26086,29 +26090,30 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 //   <Loading type='rings' width={100} height={100} fill='#f44242' />
 // );
 
-var App = function (_React$Component) {
-    _inherits(App, _React$Component);
+var Loader = function (_React$Component) {
+    _inherits(Loader, _React$Component);
 
-    function App(props) {
-        _classCallCheck(this, App);
+    function Loader(props) {
+        _classCallCheck(this, Loader);
 
-        var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (Loader.__proto__ || Object.getPrototypeOf(Loader)).call(this, props));
 
         _this.state = {
             isLoading: true,
             loaded: false
         };
         _this.startLoading = _this.startLoading.bind(_this);
+        _this.isLoaded = _this.isLoaded.bind(_this);
         return _this;
     }
 
-    _createClass(App, [{
-        key: 'componentWillMount',
-        value: function componentWillMount() {
+    _createClass(Loader, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
             var _this2 = this;
 
             setTimeout(function () {
-                return _this2.setState({ isLoading: false });
+                return _this2.setState({ isLoading: false, loaded: true });
             }, 3000);
         }
     }, {
@@ -26117,17 +26122,23 @@ var App = function (_React$Component) {
             this.setState({ isLoading: this.state.isLoading });
         }
     }, {
+        key: 'isLoaded',
+        value: function isLoaded() {
+            this.setState({ loaded: this.state.loaded });
+        }
+    }, {
         key: 'render',
         value: function render() {
             return _react2.default.createElement(
                 'div',
-                null,
-                this.state.isLoading && _react2.default.createElement(_reactLoadingComponents2.default, { type: 'rings', width: 100, height: 100, fill: '#f44242' })
+                { className: (this.state.isLoading ? this.state.loaded : '') + ' ' },
+                this.state.isLoading && _react2.default.createElement(_reactLoadingComponents2.default, { type: 'rings', width: 100, height: 100, fill: '#f44242' }),
+                this.state.loaded && _react2.default.createElement(_Ready2.default, null)
             );
         }
     }]);
 
-    return App;
+    return Loader;
 }(_react2.default.Component);
 
 // class Loader extends Component {
@@ -26163,7 +26174,7 @@ var App = function (_React$Component) {
 //     }
 
 
-exports.default = App;
+exports.default = Loader;
 
 /***/ }),
 /* 86 */

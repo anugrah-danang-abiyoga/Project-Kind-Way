@@ -1,11 +1,13 @@
 import React from 'react';
 import Loading from 'react-loading-components';
 
+import Ready from './Ready'
+
 // const Loader = () => (
 //   <Loading type='rings' width={100} height={100} fill='#f44242' />
 // );
 
-export default class App extends React.Component {
+export default class Loader extends React.Component {
     constructor(props) {
         super(props)
         this.state={
@@ -13,22 +15,27 @@ export default class App extends React.Component {
         loaded: false
         }
         this.startLoading = this.startLoading.bind(this)
+        this.isLoaded = this.isLoaded.bind(this)
       }
 
-      componentWillMount() {
-        setTimeout(() => this.setState({ isLoading: false }), 3000)
+      componentDidMount() {
+        setTimeout(() => this.setState({ isLoading: false, loaded: true }), 3000)
     }
 
       startLoading() {
           this.setState({isLoading: this.state.isLoading})
       }
 
+      isLoaded() {
+          this.setState({loaded: this.state.loaded})
+      }
+
     
       render() {
           return (
-              <div>
+              <div className={`${this.state.isLoading ? this.state.loaded : ''} `}>
                   {this.state.isLoading && <Loading type='rings' width={100} height={100} fill='#f44242' />}
-
+                  {this.state.loaded && <Ready />} 
               </div>
           )
       }
