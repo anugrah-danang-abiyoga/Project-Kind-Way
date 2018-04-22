@@ -1,7 +1,7 @@
 import React from 'react';
 import Loading from 'react-loading-components';
 
-import Ready from './ReadyUser'
+import Ready from './Ready'
 
 // const Loader = () => (
 //   <Loading type='rings' width={100} height={100} fill='#f44242' />
@@ -35,7 +35,7 @@ export default class Loader extends React.Component {
           return (
               <div className={`${this.state.isLoading ? this.state.loaded : ''} `}>
                   {this.state.isLoading && <Loading type='rings' width={100} height={100} fill='#f44242' />}
-                  {this.state.loaded && <ReadyUser />} 
+                  {this.state.loaded && <Ready />} 
               </div>
           )
       }
