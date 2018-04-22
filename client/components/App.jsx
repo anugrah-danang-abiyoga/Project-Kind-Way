@@ -1,15 +1,31 @@
 import React from 'react'
-import { HashRouter as Router, Route } from 'react-router-dom' 
+import { HashRouter as Router, Route, Link } from 'react-router-dom' 
 
 import Loader from './Loader'
+import Ready from './Ready'
+
 
 const App = props => {
-    return <Router>
+    return (<Router>
         <div>
-        <Loader />
-        <h1>Hello, Have you done any good deeds today?</h1>
+        <Route exact path="/" component={Loader} />
+        <Route path="/Ready" component={Ready} />
         </div>
-    </Router>
+    </Router>)
 }
 
 export default App
+
+
+// export default class App extends React.Component {
+//     constructor(props) {
+//         super(props)
+//         this.state = {
+//             loading: true
+//         }
+//         this.startLoading = this.startLoading.bind(this)
+//     }
+//     startLoading() {
+//         this.setState({loading: this.state.loading})
+//     }
+

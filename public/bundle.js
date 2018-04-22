@@ -22859,6 +22859,10 @@ var _Loader = __webpack_require__(85);
 
 var _Loader2 = _interopRequireDefault(_Loader);
 
+var _Ready = __webpack_require__(103);
+
+var _Ready2 = _interopRequireDefault(_Ready);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var App = function App(props) {
@@ -22868,17 +22872,25 @@ var App = function App(props) {
         _react2.default.createElement(
             'div',
             null,
-            _react2.default.createElement(_Loader2.default, null),
-            _react2.default.createElement(
-                'h1',
-                null,
-                'Hello, Have you done any good deeds today?'
-            )
+            _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _Loader2.default }),
+            _react2.default.createElement(_reactRouterDom.Route, { path: '/Ready', component: _Ready2.default })
         )
     );
 };
 
 exports.default = App;
+
+// export default class App extends React.Component {
+//     constructor(props) {
+//         super(props)
+//         this.state = {
+//             loading: true
+//         }
+//         this.startLoading = this.startLoading.bind(this)
+//     }
+//     startLoading() {
+//         this.setState({loading: this.state.loading})
+//     }
 
 /***/ }),
 /* 57 */
@@ -26049,8 +26061,10 @@ var withRouter = function withRouter(Component) {
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(1);
 
@@ -26060,13 +26074,72 @@ var _reactLoadingComponents = __webpack_require__(86);
 
 var _reactLoadingComponents2 = _interopRequireDefault(_reactLoadingComponents);
 
+var _Ready = __webpack_require__(103);
+
+var _Ready2 = _interopRequireDefault(_Ready);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Loader = function Loader() {
-  return _react2.default.createElement(_reactLoadingComponents2.default, { type: 'rings', width: 100, height: 100, fill: '#f44242' });
-};
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-exports.default = Loader;
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+// const Loader = () => (
+//   <Loading type='rings' width={100} height={100} fill='#f44242' />
+// );
+
+var Loader = function (_React$Component) {
+    _inherits(Loader, _React$Component);
+
+    function Loader(props) {
+        _classCallCheck(this, Loader);
+
+        var _this = _possibleConstructorReturn(this, (Loader.__proto__ || Object.getPrototypeOf(Loader)).call(this, props));
+
+        _this.state = {
+            isLoading: true,
+            loaded: false
+        };
+        _this.startLoading = _this.startLoading.bind(_this);
+        _this.isLoaded = _this.isLoaded.bind(_this);
+        return _this;
+    }
+
+    _createClass(Loader, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            var _this2 = this;
+
+            setTimeout(function () {
+                return _this2.setState({ isLoading: false, loaded: true });
+            }, 3000);
+        }
+    }, {
+        key: 'startLoading',
+        value: function startLoading() {
+            this.setState({ isLoading: this.state.isLoading });
+        }
+    }, {
+        key: 'isLoaded',
+        value: function isLoaded() {
+            this.setState({ loaded: this.state.loaded });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                'div',
+                { className: (this.state.isLoading ? this.state.loaded : '') + ' ' },
+                this.state.isLoading && _react2.default.createElement(_reactLoadingComponents2.default, { type: 'rings', width: 100, height: 100, fill: '#f44242' }),
+                this.state.loaded && _react2.default.createElement(_Ready2.default, null)
+            );
+        }
+    }]);
+
+    return Loader;
+}(_react2.default.Component);
 
 // class Loader extends Component {
 //   constructor(props) {
@@ -26077,6 +26150,31 @@ exports.default = Loader;
 //     };
 //   }
 // }
+
+// export default class Loader extends React.Component {
+//     constructor(props) {
+//         super(props)
+//         this.state={
+//         loading: true
+//         }
+//       }
+
+//       componentDidMount() {
+//           setTimeout(() => this.setState({ loading: false }), '/Ready')
+//           .then();
+//       }
+
+//       render() {
+//           return (
+//               <div>
+//                   <Loading type='rings' width={100} height={100} fill='#f44242' />        
+//               </div>
+//           )
+//       }
+//     }
+
+
+exports.default = Loader;
 
 /***/ }),
 /* 86 */
@@ -29216,6 +29314,33 @@ function onlyChild(children) {
 
 module.exports = onlyChild;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 103 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Ready = function Ready(props) {
+    return _react2.default.createElement(
+        'p',
+        null,
+        'Hello, Have you done any good deeds today?'
+    );
+};
+
+exports.default = Ready;
 
 /***/ })
 /******/ ]);
