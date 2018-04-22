@@ -4234,6 +4234,9 @@ module.exports = ReactElementValidator;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
+exports.ReadyUser = undefined;
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(1);
 
@@ -4241,15 +4244,56 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Ready = function Ready(props) {
-    return _react2.default.createElement(
-        'p',
-        null,
-        'Hello, Have you done any good deeds today?'
-    );
-};
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-exports.default = Ready;
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ReadyUser = exports.ReadyUser = function (_React$Components) {
+    _inherits(ReadyUser, _React$Components);
+
+    function ReadyUser(props) {
+        _classCallCheck(this, ReadyUser);
+
+        var _this = _possibleConstructorReturn(this, (ReadyUser.__proto__ || Object.getPrototypeOf(ReadyUser)).call(this, props));
+
+        _this.state = {
+            errorMessage: null,
+            name: '',
+            country: '',
+            Region: ''
+        };
+        _this.handleChange = _this.handleChange.bind(_this);
+        _this.handleSubmit = _this.handleSubmit.bind(_this);
+        return _this;
+    }
+
+    _createClass(ReadyUser, [{
+        key: 'componentWillMount',
+        value: function componentWillMount() {}
+    }, {
+        key: 'componentWillReceiveProps',
+        value: function componentWillReceiveProps() {}
+    }, {
+        key: 'handleChange',
+        value: function handleChange(event) {}
+    }, {
+        key: 'handleSubmit',
+        value: function handleSubmit(event) {}
+    }, {
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                'p',
+                null,
+                'lol'
+            );
+        }
+    }]);
+
+    return ReadyUser;
+}(_react2.default.Components);
 
 /***/ }),
 /* 45 */
@@ -22886,9 +22930,9 @@ var _Loader = __webpack_require__(86);
 
 var _Loader2 = _interopRequireDefault(_Loader);
 
-var _Ready = __webpack_require__(44);
+var _ReadyUser = __webpack_require__(44);
 
-var _Ready2 = _interopRequireDefault(_Ready);
+var _ReadyUser2 = _interopRequireDefault(_ReadyUser);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -22900,7 +22944,7 @@ var App = function App(props) {
             'div',
             null,
             _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _Loader2.default }),
-            _react2.default.createElement(_reactRouterDom.Route, { path: '/Ready', component: _Ready2.default })
+            _react2.default.createElement(_reactRouterDom.Route, { path: '/ReadyUser', component: ReadyUser })
         )
     );
 };
@@ -26101,9 +26145,9 @@ var _reactLoadingComponents = __webpack_require__(87);
 
 var _reactLoadingComponents2 = _interopRequireDefault(_reactLoadingComponents);
 
-var _Ready = __webpack_require__(44);
+var _ReadyUser = __webpack_require__(44);
 
-var _Ready2 = _interopRequireDefault(_Ready);
+var _ReadyUser2 = _interopRequireDefault(_ReadyUser);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -26141,7 +26185,7 @@ var Loader = function (_React$Component) {
 
             setTimeout(function () {
                 return _this2.setState({ isLoading: false, loaded: true });
-            }, 3000);
+            }, 4000);
         }
     }, {
         key: 'startLoading',
@@ -26160,7 +26204,7 @@ var Loader = function (_React$Component) {
                 'div',
                 { className: (this.state.isLoading ? this.state.loaded : '') + ' ' },
                 this.state.isLoading && _react2.default.createElement(_reactLoadingComponents2.default, { type: 'rings', width: 100, height: 100, fill: '#f44242' }),
-                this.state.loaded && _react2.default.createElement(_Ready2.default, null)
+                this.state.loaded && _react2.default.createElement(ReadyUser, null)
             );
         }
     }]);
