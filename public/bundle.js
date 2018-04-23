@@ -29411,7 +29411,6 @@ module.exports = onlyChild;
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.Form = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -29430,8 +29429,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 // import { HashRouter as Router, Route, Link } from 'react-router-dom'
 
 
-var Form = exports.Form = function (_React$Components) {
-    _inherits(Form, _React$Components);
+var Form = function (_React$Component) {
+    _inherits(Form, _React$Component);
 
     function Form(props) {
         _classCallCheck(this, Form);
@@ -29457,25 +29456,27 @@ var Form = exports.Form = function (_React$Components) {
         key: 'handleSubmit',
         value: function handleSubmit(e) {
             e.preventDefault();
-            this.props.makeForm(this.state);
+            this.props.form(this.state);
         }
     }, {
         key: 'render',
         value: function render() {
-            return;
-            _react2.default.createElement(
+            return _react2.default.createElement(
                 'form',
                 { onSubmit: this.handleSubmit },
                 _react2.default.createElement('input', { onChange: this.handleChange, type: 'text', name: 'name', placeholder: 'Name' }),
                 _react2.default.createElement('input', { onChange: this.handleChange, type: 'text', name: 'country', placeholder: 'Country' }),
                 _react2.default.createElement('input', { onChange: this.handleChange, type: 'text', name: 'Region', placeholder: 'Region' }),
-                _react2.default.createElement('input', { type: 'submit', value: 'you are awesome' })
+                _react2.default.createElement('input', { type: 'submit', value: 'Now you can submit and go to next page' })
             );
+            console.log(form);
         }
     }]);
 
     return Form;
-}(_react2.default.Components);
+}(_react2.default.Component);
+
+exports.default = Form;
 
 /***/ })
 /******/ ]);
