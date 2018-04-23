@@ -23016,9 +23016,7 @@ var App = function App(props) {
             null,
             _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _Loader2.default }),
             _react2.default.createElement(_reactRouterDom.Route, { path: '/Ready', component: _Ready2.default }),
-            _react2.default.createElement(_reactRouterDom.Route, { path: '/Form/', component: function component(props) {
-                    return _react2.default.createElement(_Form2.default, { details: props });
-                } })
+            _react2.default.createElement(_reactRouterDom.Route, { path: '/Form/', component: _Form2.default })
         )
     );
 };
@@ -23036,6 +23034,8 @@ exports.default = App;
 //     startLoading() {
 //         this.setState({loading: this.state.loading})
 //     }
+
+{/* <Route path="/Form/" component={(props) => <Form details={props}/>}/> */}
 
 /***/ }),
 /* 59 */

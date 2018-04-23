@@ -11,7 +11,7 @@ const App = props => {
         <div>
         <Route exact path="/" component={Loader} />
         <Route path="/Ready" component={Ready} />
-        <Route path="/Form/" component={(props) => <Form details={props}/>}/>
+        <Route path="/Form/" component={Form}/>
         </div>
     </Router>)
 }
@@ -31,3 +31,4 @@ export default App
 //         this.setState({loading: this.state.loading})
 //     }
 
+{/* <Route path="/Form/" component={(props) => <Form details={props}/>}/> */}
