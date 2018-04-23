@@ -3,7 +3,6 @@ import { HashRouter as Router, Route, Link } from 'react-router-dom'
 
 import Loader from './Loader'
 import Ready from './Ready'
-
 import Form from './Form'
 
 const App = props => {
@@ -11,7 +10,7 @@ const App = props => {
         <div>
         <Route exact path="/" component={Loader} />
         <Route path="/Ready" component={Ready} />
-        <Route path="/Form/" component={Form}/>
+        <Route path="/Form" component={Form}/>
         </div>
     </Router>)
 }

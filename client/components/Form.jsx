@@ -1,42 +1,36 @@
 import React from 'react'
 
+// import { HashRouter as Router, Route, Link } from 'react-router-dom'
 
-const Form = props => {
-    console.log(props.details)
-    return (
-        <p>Hello, Have you done any good deeds today?</p>
-    )
+
+export class Form extends React.Components {
+    constructor(props) {
+    super(props)
+    this.state={
+        // name: '',
+        // country: '',
+        // Region: ''
+    }
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
 }
 
-export default Form
+handleChange(e) {
+    this.setState({value: e.target.value})
+}
 
+handleSubmit(e) {
+    e.preventDefault()
+    this.props.makeForm(this.state)
+}
 
-
-// export class Form extends React.Components {
-//     constructor(props) {
-//     super(props)
-//     this.state={
-//         errorMessage: null,
-//         name: '',
-//         country: '',
-//         Region: ''
-//     }
-//     this.handleChange = this.handleChange.bind(this)
-//     this.handleSubmit = this.handleSubmit.bind(this)
-// }
-
-// handleChange(event) {
-
-// }
-
-// handleSubmit(event) {
-
-// }
-
-// render() {
-//     return (
-//         <p>lol</p>
-
-//     )
-// }
-// }
+render() {
+    return (
+        <form onSubmit={this.handleSubmit}>
+        <input onChange={this.handleChange} type='text' name='name' placeholder='Name' />
+        <input onChange={this.handleChange} type='text' name='country' placeholder='Country' />
+        <input onChange={this.handleChange} type='text' name='Region' placeholder='Region' />
+        </form>
+    )
+}
+}
