@@ -1,30 +1,41 @@
 import React from 'react'
 
-export class Form extends React.Components {
-    constructor(props) {
-    super(props)
-    this.state={
-        errorMessage: null,
-        name: '',
-        country: '',
-        Region: ''
-    }
-    this.handleChange = this.handleChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
-}
 
-handleChange(event) {
-
-}
-
-handleSubmit(event) {
-
-}
-
-render() {
+const Form = props => {
     return (
-        <p>lol</p>
-
+        <p>Hello, Have you done any good deeds today?</p>
     )
 }
-}
+
+export default Form
+
+
+
+// export class Form extends React.Components {
+//     constructor(props) {
+//     super(props)
+//     this.state={
+//         errorMessage: null,
+//         name: '',
+//         country: '',
+//         Region: ''
+//     }
+//     this.handleChange = this.handleChange.bind(this)
+//     this.handleSubmit = this.handleSubmit.bind(this)
+// }
+
+// handleChange(event) {
+
+// }
+
+// handleSubmit(event) {
+
+// }
+
+// render() {
+//     return (
+//         <p>lol</p>
+
+//     )
+// }
+// }

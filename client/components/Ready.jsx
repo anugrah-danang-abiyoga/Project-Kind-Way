@@ -1,11 +1,44 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-const Ready = props => {
-    return (
-        <h1>Yeay choose which one are you?</h1>
-    )
+import Form from './Form'
+
+
+export default class Ready extends React.Component {
+
+
+
+
+
+
+
+
+
+    render() {
+        return (
+        <div className='options'>
+          <button><Link to='./Form'>Existing User</Link></button>
+          <button><Link to='./Form'>New User</Link></button>
+        </div>
+        )
+    }
 }
 
-export default Ready
+// constructor(props) {
+//     super(props)
+//     this.state={
+//         newUser: '../../public/images/ExistingUser',
+//         existingUser: '../../public/images/NewUser'
+//     }
+
+// }
+
+
+
+
+
+
+
+
 
 
