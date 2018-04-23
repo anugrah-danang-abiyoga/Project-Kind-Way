@@ -1,7 +1,7 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { HashRouter as Router, Route, Link } from 'react-router-dom'
 
-import Form from './Form'
+
 
 
 export default class Ready extends React.Component {
@@ -17,8 +17,9 @@ export default class Ready extends React.Component {
     render() {
         return (
         <div className='options'>
-          <button><Link to='./Form'>Existing User</Link></button>
-          <button><Link to='./Form'>New User</Link></button>
+          <button><Link to='/Form'>Existing User</Link></button>
+          <button><Link to='/Form'>New User</Link></button>
+          
         </div>
         )
     }

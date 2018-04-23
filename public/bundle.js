@@ -4302,10 +4302,6 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(31);
 
-var _Form = __webpack_require__(104);
-
-var _Form2 = _interopRequireDefault(_Form);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -4334,7 +4330,7 @@ var Ready = function (_React$Component) {
                     null,
                     _react2.default.createElement(
                         _reactRouterDom.Link,
-                        { to: './Form' },
+                        { to: '/Form' },
                         'Existing User'
                     )
                 ),
@@ -4343,7 +4339,7 @@ var Ready = function (_React$Component) {
                     null,
                     _react2.default.createElement(
                         _reactRouterDom.Link,
-                        { to: './Form' },
+                        { to: '/Form' },
                         'New User'
                     )
                 )
@@ -23005,6 +23001,10 @@ var _Ready = __webpack_require__(45);
 
 var _Ready2 = _interopRequireDefault(_Ready);
 
+var _Form = __webpack_require__(104);
+
+var _Form2 = _interopRequireDefault(_Form);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var App = function App(props) {
@@ -23015,7 +23015,10 @@ var App = function App(props) {
             'div',
             null,
             _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _Loader2.default }),
-            _react2.default.createElement(_reactRouterDom.Route, { path: '/Ready', component: _Ready2.default })
+            _react2.default.createElement(_reactRouterDom.Route, { path: '/Ready', component: _Ready2.default }),
+            _react2.default.createElement(_reactRouterDom.Route, { path: '/Form/', component: function component(props) {
+                    return _react2.default.createElement(_Form2.default, { details: props });
+                } })
         )
     );
 };
@@ -29416,6 +29419,7 @@ var _react2 = _interopRequireDefault(_react);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Form = function Form(props) {
+    console.log(props.details);
     return _react2.default.createElement(
         'p',
         null,

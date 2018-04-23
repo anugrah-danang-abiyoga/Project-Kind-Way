@@ -4,12 +4,14 @@ import { HashRouter as Router, Route, Link } from 'react-router-dom'
 import Loader from './Loader'
 import Ready from './Ready'
 
+import Form from './Form'
 
 const App = props => {
     return (<Router>
         <div>
         <Route exact path="/" component={Loader} />
         <Route path="/Ready" component={Ready} />
+        <Route path="/Form/" component={(props) => <Form details={props}/>}/>
         </div>
     </Router>)
 }
