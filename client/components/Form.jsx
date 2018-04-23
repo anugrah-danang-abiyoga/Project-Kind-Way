@@ -7,9 +7,9 @@ export class Form extends React.Components {
     constructor(props) {
     super(props)
     this.state={
-        // name: '',
-        // country: '',
-        // Region: ''
+        name: '',
+        country: '',
+        Region: ''
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -25,12 +25,13 @@ handleSubmit(e) {
 }
 
 render() {
-    return (
+    return 
         <form onSubmit={this.handleSubmit}>
         <input onChange={this.handleChange} type='text' name='name' placeholder='Name' />
         <input onChange={this.handleChange} type='text' name='country' placeholder='Country' />
         <input onChange={this.handleChange} type='text' name='Region' placeholder='Region' />
+        <input type='submit' value='you are awesome' />
         </form>
-    )
+    
 }
 }
