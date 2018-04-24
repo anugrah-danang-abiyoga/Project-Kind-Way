@@ -20,23 +20,33 @@ export default class Form extends React.Component {
     }
 
     handleChange(e) {
-        this.setState({value: e.target.value})
+        var key = e.target.name
+        var value = e.target.value
+        this.setState({[key]: value})
+        // this.setState({value: e.target.value})
     }
 
     handleSubmit(e) {
         e.preventDefault()
+        console.log(this.state)
         this.props.makeUserForm(this.state)
     }
 
     render() {
         return (
+            <div>
             <form onSubmit={this.handleSubmit}>
-            <input onChange={this.handleChange} type='text' name='name' placeholder='Name' />
-            <input onChange={this.handleChange} type='text' name='country' placeholder='Country' />
+            <input onChange={this.handleChange} type='text' name='Name' placeholder='Name' />
+            <input onChange={this.handleChange} type='text' name='Country' placeholder='Country' />
             <input onChange={this.handleChange} type='text' name='Region' placeholder='Region' />
             <input onChange={this.handleChange} type='text' name='GoodDeed' placeholder='Good Deed' />
             <input type='submit' value='Submit!' />
             </form>
+            </div>
+
+            // <div className='redirect'>
+            // <GoodForm createForm={this.state.makeUserForm} />    
+            // </div>    
         )
         console.log(form)
     }

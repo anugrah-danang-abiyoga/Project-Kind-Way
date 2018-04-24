@@ -1,9 +1,9 @@
 import React from 'react'
-import { HashRouter as Router, Route, Link } from 'react-router-dom' 
+// import { HashRouter as Router, Route, Link } from 'react-router-dom' 
 
 import AllUser from './AllUser'
 
-function Users (props) {
+function AllUsers (props) {
     return <div>
         {props.users.map(user => <div key={i}>
             <h3>{user.Name}</h3>

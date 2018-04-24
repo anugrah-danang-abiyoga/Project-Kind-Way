@@ -13,7 +13,7 @@ export default class GoodForm extends React.Component {
                 {id: 3, Name: 'Annie', Country:'New Zealand', Region:'Auckland', GoodDeed: 'I am helping my friend to deploy her artwork for the exhibition'}
             ]
         }
-        this.makeUser = this.makeUser.bind(this)
+        // this.makeUser = this.makeUser.bind(this)
         this.makeUserForm = this.makeUserForm.bind(this)
     }
     makeUserForm(user) {
