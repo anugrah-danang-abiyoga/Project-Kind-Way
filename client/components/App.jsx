@@ -4,6 +4,8 @@ import { HashRouter as Router, Route, Link } from 'react-router-dom'
 import Loader from './Loader'
 import Ready from './Ready'
 import Form from './Form'
+import GoodForm from './GoodForm'
+import AllUser from './AllUser'
 
 const App = props => {
     return (<Router>
@@ -11,6 +13,8 @@ const App = props => {
         <Route exact path="/" component={Loader} />
         <Route path="/Ready" component={Ready} />
         <Route path="/Form" component={Form}/>
+        <Route path="/GoodForm" component={GoodForm}/>
+        <Route path="/AllUser" component={AllUser}/>
         </div>
     </Router>)
 }
@@ -18,16 +22,3 @@ const App = props => {
 export default App
 
 
-// export default class App extends React.Component {
-//     constructor(props) {
-//         super(props)
-//         this.state = {
-//             loading: true
-//         }
-//         this.startLoading = this.startLoading.bind(this)
-//     }
-//     startLoading() {
-//         this.setState({loading: this.state.loading})
-//     }
-
-{/* <Route path="/Form/" component={(props) => <Form details={props}/>}/> */}
