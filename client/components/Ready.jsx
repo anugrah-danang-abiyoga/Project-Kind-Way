@@ -7,7 +7,7 @@ export default class Ready extends React.Component {
         return (
         <div className='options-route'>
         <h2>Awesome, Choose which one are you?</h2>
-          <button><Link to='/AllUser'>Existing User</Link></button>
+          <button><Link to='/Form'>Existing User</Link></button>
           <button><Link to='/Form'>New User</Link></button>
           
         </div>
