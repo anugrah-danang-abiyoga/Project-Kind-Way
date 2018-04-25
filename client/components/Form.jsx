@@ -34,13 +34,13 @@ export default class Form extends React.Component {
 
     render() {
         return (
-            <div>
+            <div id='form'>
             <form onSubmit={this.handleSubmit}>
             <input onChange={this.handleChange} type='text' name='Name' placeholder='Name' />
             <input onChange={this.handleChange} type='text' name='Country' placeholder='Country' />
             <input onChange={this.handleChange} type='text' name='Region' placeholder='Region' />
             <input onChange={this.handleChange} type='text' name='GoodDeed' placeholder='Good Deed' />
-            <input type='submit' value='Submit!'  />
+            <input onClick={this.formVisible} type='submit' value='Submit!'  />
             </form>
             <br />
             {/* {this.makeUserForm && <GoodForm handleSubmit={this.handleSubmit}/>} */}
@@ -50,6 +50,6 @@ export default class Form extends React.Component {
             // <GoodForm createForm={this.state.makeUserForm} />    
             // </div>    
         )
-        console.log(form)
+        // console.log(form)
     }
 }

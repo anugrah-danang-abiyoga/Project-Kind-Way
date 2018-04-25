@@ -1,13 +1,37 @@
-.loader {
-    border: 16px solid #f3f3f3; 
-    border-top: 16px solid #3498db; 
-    border-radius: 50%;
-    width: 120px;
-    height: 120px;
-    animation: spin 2s linear infinite;
+
+.button {
+    background-color: #000066; 
+    text-align: center;
+    text: blue;
+    size: 100em;
+} 
+
+.options-route{
+background-position: center;
+background-size: 100%;
+padding-top: 20em;
+padding-bottom: 20em;
+margin-bottom: .50em;
 }
 
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
+body,html{
+    background-image: url('http://static.tumblr.com/03ebe3d53afdf95f81a35c44817e7eb6/9iqlphz/XkHnv0tls/tumblr_static_8di0tladrp0cs040oo8088040.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    text-align: center;
+    font-size: 18px;
+    font-family: 'Interstate Compressed Bold', Interstate Compressed;
+    display: flex;
+    justify-content: space-around;
+    align-items: padding;
+    
+  }
+
+  p{
+      color: #000066;  
+  }
+
+  h3{
+    color: #000066;
+  }

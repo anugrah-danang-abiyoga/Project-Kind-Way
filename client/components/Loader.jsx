@@ -19,7 +19,7 @@ export default class Loader extends React.Component {
       }
 
       componentDidMount() {
-        setTimeout(() => this.setState({ isLoading: false, loaded: true }), 4000)
+        setTimeout(() => this.setState({ isLoading: false, loaded: true }), 5000)
     }
 
       startLoading() {
@@ -34,7 +34,7 @@ export default class Loader extends React.Component {
       render() {
           return (
               <div className={`${this.state.isLoading ? this.state.loaded : ''} `}>
-                  {this.state.isLoading && <Loading type='rings' width={100} height={100} fill='#f44242' />}
+                  {this.state.isLoading && <Loading type='hearts' width={400} height={400} fill='#000066' />}
                   {this.state.loaded && <Ready />} 
               </div>
           )
