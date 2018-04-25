@@ -1,11 +1,10 @@
 import React from 'react'
 // import { HashRouter as Router, Route, Link } from 'react-router-dom' 
 
-import AllUser from './AllUser'
 
-function AllUsers (props) {
+function AllUser (props) {
     return <div>
-        {props.users.map(user => <div key={i}>
+        {props.users.map(user => <div key={user.id}>
             <h3>{user.Name}</h3>
             <p>{user.Country}</p>
             <p>{user.Region}</p>

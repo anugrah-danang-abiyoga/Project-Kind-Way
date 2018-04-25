@@ -12,7 +12,8 @@ const App = props => {
         <div>
         <Route exact path="/" component={Loader} />
         <Route path="/Ready" component={Ready} />
-        <Route path="/Form" component={Form}/>
+        <Route path='/users' component={GoodForm} />
+        <Route path="/Form" component={GoodForm}/>
         <Route path="/GoodForm" component={GoodForm}/>
         <Route path="/AllUser" component={AllUser}/>
         </div>

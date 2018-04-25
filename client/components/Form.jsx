@@ -4,7 +4,7 @@ import React from 'react'
 import GoodForm from './GoodForm'
 import AllUser from './AllUser'
 
-// import { HashRouter as Router, Route, Link } from 'react-router-dom'
+import { HashRouter as Router, Route, Link } from 'react-router-dom'
 
 
 export default class Form extends React.Component {
@@ -40,8 +40,10 @@ export default class Form extends React.Component {
             <input onChange={this.handleChange} type='text' name='Country' placeholder='Country' />
             <input onChange={this.handleChange} type='text' name='Region' placeholder='Region' />
             <input onChange={this.handleChange} type='text' name='GoodDeed' placeholder='Good Deed' />
-            <input type='submit' value='Submit!' />
+            <input type='submit' value='Submit!'  />
             </form>
+            <br />
+            {/* {this.makeUserForm && <GoodForm handleSubmit={this.handleSubmit}/>} */}
             </div>
 
             // <div className='redirect'>
