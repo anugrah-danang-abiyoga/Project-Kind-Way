@@ -18,7 +18,8 @@
   "scripts": {
     "knex": "knex",
     "test": "jest",
-    "start": "node server & webpack --watch"
+    "start": "node server & webpack --watch",
+    "postinstall": "webpack"
   },
   "babel": {
     "presets": [
