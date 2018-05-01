@@ -1,6 +1,7 @@
 import React from 'react'
 import { HashRouter as Router, Route, Link } from 'react-router-dom' 
 
+import Dictaphone from './Dictaphone'
 import Loader from './Loader'
 import Ready from './Ready'
 
@@ -8,6 +9,7 @@ import Ready from './Ready'
 const App = props => {
     return (<Router>
         <div>
+            <Dictaphone />
         <Route exact path="/" component={Loader} />
         <Route path="/Ready" component={Ready} />
         </div>
