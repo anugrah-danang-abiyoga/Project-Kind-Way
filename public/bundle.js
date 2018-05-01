@@ -26482,7 +26482,7 @@ var Loader = function (_React$Component) {
             return _react2.default.createElement(
                 'div',
                 { className: (this.state.isLoading ? this.state.loaded : '') + ' ' },
-                this.state.isLoading && _react2.default.createElement(_reactLoadingComponents2.default, { type: 'hearts', width: 400, height: 400, fill: '#000066' }),
+                this.state.isLoading && _react2.default.createElement(_reactLoadingComponents2.default, { type: 'grid', width: 400, height: 400, fill: '#000066' }),
                 this.state.loaded && _react2.default.createElement(_Ready2.default, null)
             );
         }

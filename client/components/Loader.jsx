@@ -34,7 +34,7 @@ export default class Loader extends React.Component {
       render() {
           return (
               <div className={`${this.state.isLoading ? this.state.loaded : ''} `}>
-                  {this.state.isLoading && <Loading type='hearts' width={400} height={400} fill='#000066' />}
+                  {this.state.isLoading && <Loading type='grid' width={400} height={400} fill='#000066' />}
                   {this.state.loaded && <Ready />} 
               </div>
           )
