@@ -2,11 +2,10 @@ import React from 'react'
 import SpeechRecognition from 'react-speech-recognition'
 
 function Dictaphone (props) {
-    const { transcript, startListening, stopListening, resetTranscript, browserSupportsSpeechRecognition, playerScores } = this.props
+    const { transcript, startListening, stopListening, resetTranscript, browserSupportsSpeechRecognition, playerScores } = props
     if (!browserSupportsSpeechRecognition) {
       return <div>Speech recog not supported</div>
     }
-    console.log(this.props)
     return <div>
         Sound supported
       {<button className="button is-large is-success" onClick={() => startListening()}>Speak</button>}
