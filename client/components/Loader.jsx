@@ -3,9 +3,7 @@ import Loading from 'react-loading-components';
 
 import Ready from './Ready'
 
-// const Loader = () => (
-//   <Loading type='rings' width={100} height={100} fill='#f44242' />
-// );
+
 
 export default class Loader extends React.Component {
     constructor(props) {
