@@ -7,4 +7,4 @@ To look at this work, these are the steps that you should do:
 - Run yarn in your terminal
 - Run yarn start in your terminal
 - type localhost:3000 in your browser
-- you'll see my project
+- you'll see my project :D
